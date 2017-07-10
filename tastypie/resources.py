@@ -1786,7 +1786,7 @@ class ModelDeclarativeMetaclass(DeclarativeMetaclass):
         if getattr(meta, 'abstract', False):
             # abstract resources do nothing on declaration
             return super(ModelDeclarativeMetaclass, cls).__new__(cls, name, bases, attrs)
-        
+
         # Sanity check: ModelResource needs either a queryset or object_class:
         if meta and not hasattr(meta, 'queryset') and not hasattr(meta, 'object_class'):
             msg = "ModelResource (%s) requires Meta.object_class or Meta.queryset"
